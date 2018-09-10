@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+
+<address>
+   Dosquebradas - Risaralda<br />
+    <br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:elondonog@yahoo.es">Contact me</a><br />
+    <strong>Marketing:</strong> <a href="mailto:elondonog@yahoo.es">Contact me</a>
+</address>
+
+<h3>@ViewBag.TheMessage</h3>
+<form method="post">
+    <textarea name="message" style="width:100%; height:100%"></textarea>
+    <input type="submit" value="Send" />
+</form>

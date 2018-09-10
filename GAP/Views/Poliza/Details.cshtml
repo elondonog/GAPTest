@@ -1,0 +1,155 @@
+﻿@model GAP.Models.Poliza
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h4>Poliza</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idTipoCobertura)
+        </dt>
+
+        <dd>
+            @{
+                List<SelectListItem> ListCoberturas = new List<SelectListItem>();
+                ListCoberturas.Add(new SelectListItem
+                {
+                    Text = "Terremoto",
+                    Value = "1"
+                });
+                ListCoberturas.Add(new SelectListItem
+                {
+                    Text = "Incendio",
+                    Value = "2",
+                    Selected = true
+                });
+                ListCoberturas.Add(new SelectListItem
+                {
+                    Text = "Robo",
+                    Value = "3"
+                });
+                ListCoberturas.Add(new SelectListItem
+                {
+                    Text = "Perdida",
+                    Value = "4"
+                });
+            }
+           
+            @Html.DropDownListFor(model => model.idTipoCobertura, ListCoberturas, "-- Seleccione Cobertura --")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idTipoRiesgo)
+        </dt>
+
+        <dd>
+            @{
+                List<SelectListItem> ListRiesgo = new List<SelectListItem>();
+                ListRiesgo.Add(new SelectListItem
+                {
+                    Text = "Bajo",
+                    Value = "1"
+                });
+                ListRiesgo.Add(new SelectListItem
+                {
+                    Text = "Medio",
+                    Value = "2",
+                    Selected = true
+                });
+                ListRiesgo.Add(new SelectListItem
+                {
+                    Text = "Medio-Alto",
+                    Value = "3"
+                });
+                ListRiesgo.Add(new SelectListItem
+                {
+                    Text = "Alto",
+                    Value = "4"
+                });
+            }
+
+            @Html.DropDownListFor(model => model.idTipoCobertura, ListRiesgo, "-- Seleccione Riesgo --")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idTipoEstado)
+        </dt>
+
+        <dd>
+            @{
+                List<SelectListItem> ListEstadoPoliza = new List<SelectListItem>();
+
+                ListEstadoPoliza.Add(new SelectListItem
+                {
+                    Text = "Asignado",
+                    Value = "1"
+                });
+
+                ListEstadoPoliza.Add(new SelectListItem
+                {
+                    Text = "Cancelado",
+                    Value = "2",
+                    Selected = true
+                });
+            }
+
+            @Html.DropDownListFor(model => model.idTipoCobertura, ListEstadoPoliza, "-- Seleccione Estado Poliza --")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePoliza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePoliza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescripcionPoliza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescripcionPoliza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroMesesCobertura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroMesesCobertura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "../")
+</p>
